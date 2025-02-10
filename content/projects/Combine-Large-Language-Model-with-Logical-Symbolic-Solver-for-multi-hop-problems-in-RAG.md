@@ -1,5 +1,5 @@
 ---
-date: '2025-02-10T23:37:43+07:00'
+date: 2025-02-10T11:30:03+00:00
 draft: false
 title: 'Thesis: Combine Large Language Model With Logical Symbolic Solver for Multi Hop Problems in RAG'
 ---
