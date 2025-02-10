@@ -1,6 +1,6 @@
 ---
 title: "Tập tành viết blog"
-date: 2025-02-10T11:30:03+00:00
+date: 2025-02-10
 # weight: 1
 # aliases: ["/first"]
 tags: ["first"]

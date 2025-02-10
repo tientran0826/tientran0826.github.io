@@ -1,6 +1,6 @@
 ---
 title: "Hé lu lại là Tiến đây 🤡"
-date: "2025-02-10T23:06:33+07:00"
+date: 2025-02-10
 draft: false
 tags: ["profile", "about me"]
 categories: ["Personal"]
