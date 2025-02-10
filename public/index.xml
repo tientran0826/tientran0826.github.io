@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>tientran0826</title>
+    <link>//localhost:1313/</link>
+    <description>Recent content on tientran0826</description>
+    <image>
+      <title>tientran0826</title>
+      <url>//localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>//localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 10 Feb 2025 23:45:02 +0700</lastBuildDate>
+    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leguage of Legends Champion Recommendation System</title>
+      <link>//localhost:1313/projects/leguage-of-legends-champion-recommendation-system/</link>
+      <pubDate>Mon, 10 Feb 2025 23:45:02 +0700</pubDate>
+      <guid>//localhost:1313/projects/leguage-of-legends-champion-recommendation-system/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Using Python, Flask, RIOT API, AWS Services&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;• Developed a champion recommendation system for professional tournament ban/pick phases, featuring algorithms for Counter and Synergy matrix calculations.&lt;/p&gt;
+&lt;p&gt;• Automated champion and match data updates via RIOT API, triggered through AWS Lambda and Event Bridge.&lt;/p&gt;
+&lt;p&gt;• Deployed the system on AWS EC2 with a Flask backend for efficient and scalable web service management.&lt;/p&gt;
+&lt;h2 id=&#34;demo&#34;&gt;Demo&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://media.discordapp.net/attachments/1149575593403371574/1338555391839174696/image.png?ex=67ab825a&amp;is=67aa30da&amp;hm=e94c288301e74687cc8e8d1e49f040bd5725f50b37b5166d0dc7ffebd5ce1242&amp;=&amp;format=webp&amp;quality=lossless&amp;width=1200&amp;height=522&#34;&gt;
+&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://media.discordapp.net/attachments/1149575593403371574/1338555099881930812/image.png?ex=67ab8214&amp;is=67aa3094&amp;hm=7d17b1802a91f634f09bbcc01f3576a6bf3abcf80d67ea282a749d297c68ebdf&amp;=&amp;format=webp&amp;quality=lossless&amp;width=1200&amp;height=515&#34;&gt;
+&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://media.discordapp.net/attachments/1149575593403371574/1338555138746486784/image.png?ex=67ab821e&amp;is=67aa309e&amp;hm=02ac81d0d6a10622ccdde02503b2d49890676c4a49a3d35b80d9c49e257a5e08&amp;=&amp;format=webp&amp;quality=lossless&amp;width=687&amp;height=368&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Discord Archive Hub</title>
+      <link>//localhost:1313/projects/discord-archive-hub/</link>
+      <pubDate>Mon, 10 Feb 2025 23:43:25 +0700</pubDate>
+      <guid>//localhost:1313/projects/discord-archive-hub/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Using  Python, Flask, SQLAlchemy, Discord API&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;• Built a Flask-based website that stores documents and links via a Discord bot, featuring user login and registration.&lt;/p&gt;
+&lt;p&gt;• Utilized SQLAlchemy for data management, with CRUD (Create, Read, Update, Delete) capabilities for adding, deleting, and editing stored information, displayed dynamically on the website.&lt;/p&gt;
+&lt;h2 id=&#34;demo&#34;&gt;Demo&lt;/h2&gt;
+&lt;p&gt;Create channel with Discord Bot
+&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://github.com/tientran0826/Discord-Archive-Hub/blob/main/images/create_channel_1.png?raw=true&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://github.com/tientran0826/Discord-Archive-Hub/raw/main/images/post_1.png?raw=true&#34;&gt;
+&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://github.com/tientran0826/Discord-Archive-Hub/raw/main/images/post_2.png?raw=true&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Zoom In-Out feature
+&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://github.com/tientran0826/Discord-Archive-Hub/raw/main/images/post_3.png?raw=true&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Admin Panel with CRUD features
+&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://github.com/tientran0826/Discord-Archive-Hub/raw/main/images/panel.png?raw=true&#34;&gt;
+&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://github.com/tientran0826/Discord-Archive-Hub/raw/main/images/panel_1.png?raw=true&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Netflix Movies and TV Shows Recommendation System</title>
+      <link>//localhost:1313/projects/netflix-movies-and-tv-shows-recommendation-system/</link>
+      <pubDate>Mon, 10 Feb 2025 23:41:22 +0700</pubDate>
+      <guid>//localhost:1313/projects/netflix-movies-and-tv-shows-recommendation-system/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Pandas, Numpy, RapidAPI, Streamlit&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;• A website providing movie recommendations using a content-based recommendation system.&lt;/p&gt;
+&lt;p&gt;• Processed Netflix movie data from Kaggle utilizing TF-IDF and Bag of Words techniques for natural language processing. Implemented Similarity Score matrices to identify movies with akin content descriptions.&lt;/p&gt;
+&lt;p&gt;• Developed a website using Streamlit, incorporating RapidAPI’s Netflix Unofficial API for efficient movie image retrieval.&lt;/p&gt;
+&lt;h2 id=&#34;demo&#34;&gt;Demo&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/tientran0826/Netflix-movie-and-TV-show-recommendation/main/imgs/demo.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Twitter US Airline Sentiment Analysis</title>
+      <link>//localhost:1313/projects/twitter-us-airline-sentiment-analysis/</link>
+      <pubDate>Mon, 10 Feb 2025 23:40:30 +0700</pubDate>
+      <guid>//localhost:1313/projects/twitter-us-airline-sentiment-analysis/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Using Pandas, Numpy, Scikit-learn, Matplotlib, Seaborn&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;• Analyzing customer attitudes towards airlines in the United States based on a Twitter dataset using Natural Language Processing and Machine Learning techniques..&lt;/p&gt;
+&lt;p&gt;• Applied NLTK for data processing and vectorization, and addressed label imbalance with up-sampling.&lt;/p&gt;
+&lt;p&gt;• Developed a Random Forest model, tuning hyperparameters via Grid Search CV and Random Search CV, to predict customer attitudes and estimate model accuracy.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Thesis: Combine Large Language Model With Logical Symbolic Solver for Multi Hop Problems in RAG</title>
+      <link>//localhost:1313/projects/combine-large-language-model-with-logical-symbolic-solver-for-multi-hop-problems-in-rag/</link>
+      <pubDate>Mon, 10 Feb 2025 23:37:43 +0700</pubDate>
+      <guid>//localhost:1313/projects/combine-large-language-model-with-logical-symbolic-solver-for-multi-hop-problems-in-rag/</guid>
+      <description>&lt;p&gt;This project addresses the challenge of handling multi-hop queries in Retrieval-Augmented Generation (RAG) systems. By integrating a Large Language Model (LLM) with a logical symbolic solver, we aim to enhance reasoning capabilities across diverse pieces of supporting evidence.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hé lu lại là Tiến đây 🤡</title>
+      <link>//localhost:1313/profile/me/</link>
+      <pubDate>Mon, 10 Feb 2025 23:06:33 +0700</pubDate>
+      <guid>//localhost:1313/profile/me/</guid>
+      <description>&lt;h3 id=&#34;whhhhhhhhhhhhhhh-shup&#34;&gt;Whhhhhhhhhhhhhhh-shup&lt;/h3&gt;
+&lt;p&gt;Cựu sinh viên ngành Khoa học dữ liệu khoá 2020, ĐH Khoa học tự nhiên =))) hiện đang chilling với data.&lt;/p&gt;
+&lt;h3 id=&#34;học-vấn&#34;&gt;Học vấn&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Học bổng ươm mầm trí tuệ nhân tạo tập đoàn Phước Thịnh, Học bổng khuyến khích 6/8 học kỳ&lt;/li&gt;
+&lt;li&gt;Tốt nghiệp loại xuất sắc CPA 3.9/4.0 - &lt;strong&gt;Thủ khoa đầu ra&lt;/strong&gt; ngành &lt;strong&gt;Khoa học dữ liệu&lt;/strong&gt; khoá 2020&lt;/li&gt;
+&lt;li&gt;Tiếng anh: TOEIC 925&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;kinh-nghiệm-làm-việc&#34;&gt;Kinh nghiệm làm việc&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Research Assistant&lt;/strong&gt; tại &lt;strong&gt;AISIALab&lt;/strong&gt;: 10/2022 - 11/2022&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AI Engineer Intern&lt;/strong&gt; tại công ty &lt;strong&gt;Hephaestus&lt;/strong&gt;: 06/2023 - 08/2023&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Quantitavive Researcher, Data Engineer&lt;/strong&gt; tại công ty &lt;strong&gt;PI ASSOCIATES (Vietquant)&lt;/strong&gt;: 08/2023 - 04/2024&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AI Engineer&lt;/strong&gt; tại công ty &lt;strong&gt;Armour Security&lt;/strong&gt;: 04/2024 - 05/2024&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Data Scientist&lt;/strong&gt; tại công ty &lt;strong&gt;VNPAY&lt;/strong&gt;: 05/2024 - Hiện tại&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Tập tành viết blog</title>
+      <link>//localhost:1313/posts/first-blog/</link>
+      <pubDate>Mon, 10 Feb 2025 11:30:03 +0000</pubDate>
+      <guid>//localhost:1313/posts/first-blog/</guid>
+      <description>Hjhj.</description>
+    </item>
+  </channel>
+</rss>
