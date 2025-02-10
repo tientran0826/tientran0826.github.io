@@ -2,6 +2,7 @@ baseURL: "tientran0826.github.io"
 title: tientran0826
 paginate: 5
 theme: PaperMod
+publish_dir: ./public
 enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
