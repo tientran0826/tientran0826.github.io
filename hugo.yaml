@@ -1,8 +1,8 @@
-baseURL: "tientran0826.github.io"
-title: tientran0826
+baseURL: "https://tientran0826.github.io/"
+title: "tientran0826"
 paginate: 5
 theme: PaperMod
-publish_dir: ./public
+publishDir: public
 enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
