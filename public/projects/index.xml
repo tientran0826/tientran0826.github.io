@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on tientran0826</title>
-    <link>//localhost:1313/projects/</link>
+    <link>http://localhost:1313/projects/</link>
     <description>Recent content in Projects on tientran0826</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 10 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Discord Archive Hub</title>
-      <link>//localhost:1313/projects/discord-archive-hub/</link>
+      <link>http://localhost:1313/projects/discord-archive-hub/</link>
       <pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/projects/discord-archive-hub/</guid>
+      <guid>http://localhost:1313/projects/discord-archive-hub/</guid>
       <description>&lt;p&gt;&lt;em&gt;Using  Python, Flask, SQLAlchemy, Discord API&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;• Built a Flask-based website that stores documents and links via a Discord bot, featuring user login and registration.&lt;/p&gt;&#xA;&lt;p&gt;• Utilized SQLAlchemy for data management, with CRUD (Create, Read, Update, Delete) capabilities for adding, deleting, and editing stored information, displayed dynamically on the website.&lt;/p&gt;&#xA;&lt;h2 id=&#34;demo&#34;&gt;Demo&lt;/h2&gt;&#xA;&lt;p&gt;Create channel with Discord Bot&#xA;&lt;img src=&#34;https://github.com/tientran0826/Discord-Archive-Hub/blob/main/images/create_channel_1.png?raw=true&#34; alt=&#34;alt text&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://github.com/tientran0826/Discord-Archive-Hub/raw/main/images/post_1.png?raw=true&#34; alt=&#34;alt text&#34;&gt;&#xA;&lt;img src=&#34;https://github.com/tientran0826/Discord-Archive-Hub/raw/main/images/post_2.png?raw=true&#34; alt=&#34;alt text&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Zoom In-Out feature&#xA;&lt;img src=&#34;https://github.com/tientran0826/Discord-Archive-Hub/raw/main/images/post_3.png?raw=true&#34; alt=&#34;alt text&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Admin Panel with CRUD features&#xA;&lt;img src=&#34;https://github.com/tientran0826/Discord-Archive-Hub/raw/main/images/panel.png?raw=true&#34; alt=&#34;alt text&#34;&gt;&#xA;&lt;img src=&#34;https://github.com/tientran0826/Discord-Archive-Hub/raw/main/images/panel_1.png?raw=true&#34; alt=&#34;alt text&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Leguage of Legends Champion Recommendation System</title>
-      <link>//localhost:1313/projects/leguage-of-legends-champion-recommendation-system/</link>
+      <link>http://localhost:1313/projects/leguage-of-legends-champion-recommendation-system/</link>
       <pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/projects/leguage-of-legends-champion-recommendation-system/</guid>
+      <guid>http://localhost:1313/projects/leguage-of-legends-champion-recommendation-system/</guid>
       <description>&lt;p&gt;&lt;em&gt;Using Python, Flask, RIOT API, AWS Services&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;• Developed a champion recommendation system for professional tournament ban/pick phases, featuring algorithms for Counter and Synergy matrix calculations.&lt;/p&gt;&#xA;&lt;p&gt;• Automated champion and match data updates via RIOT API, triggered through AWS Lambda and Event Bridge.&lt;/p&gt;&#xA;&lt;p&gt;• Deployed the system on AWS EC2 with a Flask backend for efficient and scalable web service management.&lt;/p&gt;&#xA;&lt;h2 id=&#34;demo&#34;&gt;Demo&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://cdn.discordapp.com/attachments/1149575593403371574/1338555391839174696/image.png?ex=67d5099a&amp;amp;is=67d3b81a&amp;amp;hm=a9ecdea6fee8e46ecdaf8042f93e895f612142e5f609d16628b1c62873341ea9&amp;amp;&#34; alt=&#34;alt text&#34;&gt;&#xA;&lt;img src=&#34;https://cdn.discordapp.com/attachments/1149575593403371574/1338555099881930812/image.png?ex=67d50954&amp;amp;is=67d3b7d4&amp;amp;hm=7ff60fbe1c2d7a944074f7ce90029a1203849b8c5f810068186c3cb87ce66791&amp;amp;&#34; alt=&#34;alt text&#34;&gt;&#xA;&lt;img src=&#34;https://cdn.discordapp.com/attachments/1149575593403371574/1338555138746486784/image.png?ex=67d5095e&amp;amp;is=67d3b7de&amp;amp;hm=d41145b79d18d09f1acf12d6f8eec0a63c33a0d5e2673ea35d10fb120e689b9d&amp;amp;&#34; alt=&#34;alt text&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Netflix Movies and TV Shows Recommendation System</title>
-      <link>//localhost:1313/projects/netflix-movies-and-tv-shows-recommendation-system/</link>
+      <link>http://localhost:1313/projects/netflix-movies-and-tv-shows-recommendation-system/</link>
       <pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/projects/netflix-movies-and-tv-shows-recommendation-system/</guid>
+      <guid>http://localhost:1313/projects/netflix-movies-and-tv-shows-recommendation-system/</guid>
       <description>&lt;p&gt;&lt;em&gt;Pandas, Numpy, RapidAPI, Streamlit&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;• A website providing movie recommendations using a content-based recommendation system.&lt;/p&gt;&#xA;&lt;p&gt;• Processed Netflix movie data from Kaggle utilizing TF-IDF and Bag of Words techniques for natural language processing. Implemented Similarity Score matrices to identify movies with akin content descriptions.&lt;/p&gt;&#xA;&lt;p&gt;• Developed a website using Streamlit, incorporating RapidAPI’s Netflix Unofficial API for efficient movie image retrieval.&lt;/p&gt;&#xA;&lt;h2 id=&#34;demo&#34;&gt;Demo&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/tientran0826/Netflix-movie-and-TV-show-recommendation/main/imgs/demo.png&#34; alt=&#34;alt text&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Thesis: Combine Large Language Model With Logical Symbolic Solver for Multi Hop Problems in RAG</title>
-      <link>//localhost:1313/projects/combine-large-language-model-with-logical-symbolic-solver-for-multi-hop-problems-in-rag/</link>
+      <link>http://localhost:1313/projects/combine-large-language-model-with-logical-symbolic-solver-for-multi-hop-problems-in-rag/</link>
       <pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/projects/combine-large-language-model-with-logical-symbolic-solver-for-multi-hop-problems-in-rag/</guid>
+      <guid>http://localhost:1313/projects/combine-large-language-model-with-logical-symbolic-solver-for-multi-hop-problems-in-rag/</guid>
       <description>&lt;p&gt;This project addresses the challenge of handling multi-hop queries in Retrieval-Augmented Generation (RAG) systems. By integrating a Large Language Model (LLM) with a logical symbolic solver, we aim to enhance reasoning capabilities across diverse pieces of supporting evidence.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://cdn.discordapp.com/attachments/1149575593403371574/1350150434878263366/image.png?ex=67d5b114&amp;amp;is=67d45f94&amp;amp;hm=61fbb009f48df96204a804fea56852d91d3c28a52ac1960c8cd1bb202d6698e6&amp;amp;&#34; alt=&#34;alt text&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Twitter US Airline Sentiment Analysis</title>
-      <link>//localhost:1313/projects/twitter-us-airline-sentiment-analysis/</link>
+      <link>http://localhost:1313/projects/twitter-us-airline-sentiment-analysis/</link>
       <pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/projects/twitter-us-airline-sentiment-analysis/</guid>
+      <guid>http://localhost:1313/projects/twitter-us-airline-sentiment-analysis/</guid>
       <description>&lt;p&gt;&lt;em&gt;Using Pandas, Numpy, Scikit-learn, Matplotlib, Seaborn&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;• Analyzing customer attitudes towards airlines in the United States based on a Twitter dataset using Natural Language Processing and Machine Learning techniques..&lt;/p&gt;&#xA;&lt;p&gt;• Applied NLTK for data processing and vectorization, and addressed label imbalance with up-sampling.&lt;/p&gt;&#xA;&lt;p&gt;• Developed a Random Forest model, tuning hyperparameters via Grid Search CV and Random Search CV, to predict customer attitudes and estimate model accuracy.&lt;/p&gt;</description>
     </item>
   </channel>
