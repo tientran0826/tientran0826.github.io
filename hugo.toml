@@ -1,4 +1,4 @@
-baseurl = "https://tientran0826.github.io/"
+baseUrl = "https://tientran0826.github.io/"
 publishDir = '/'
 languageCode = "en-us"
 # Add it only if you keep the theme in the `themes` directory.
