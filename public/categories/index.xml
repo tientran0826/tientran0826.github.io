@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on tientran0826</title>
-    <link>http://localhost:1313/public/categories/</link>
+    <link>https://tientran0826.github.io/categories/</link>
     <description>Recent content in Categories on tientran0826</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 10 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/public/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://tientran0826.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Personal</title>
-      <link>http://localhost:1313/public/categories/personal/</link>
+      <link>https://tientran0826.github.io/categories/personal/</link>
       <pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/public/categories/personal/</guid>
+      <guid>https://tientran0826.github.io/categories/personal/</guid>
       <description></description>
     </item>
   </channel>
