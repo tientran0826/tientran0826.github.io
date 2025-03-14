@@ -2,46 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/about-me/</loc>
+    <loc>http://localhost:1313/public/tags/about-me/</loc>
     <lastmod>2025-02-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>http://localhost:1313/public/categories/</loc>
     <lastmod>2025-02-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/discord-archive-hub/</loc>
+    <loc>http://localhost:1313/public/projects/discord-archive-hub/</loc>
     <lastmod>2025-02-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/leguage-of-legends-champion-recommendation-system/</loc>
+    <loc>http://localhost:1313/public/projects/leguage-of-legends-champion-recommendation-system/</loc>
     <lastmod>2025-02-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/netflix-movies-and-tv-shows-recommendation-system/</loc>
+    <loc>http://localhost:1313/public/projects/netflix-movies-and-tv-shows-recommendation-system/</loc>
     <lastmod>2025-02-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/personal/</loc>
+    <loc>http://localhost:1313/public/categories/personal/</loc>
     <lastmod>2025-02-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/profile/</loc>
+    <loc>http://localhost:1313/public/tags/profile/</loc>
     <lastmod>2025-02-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/profile/</loc>
+    <loc>http://localhost:1313/public/profile/</loc>
     <lastmod>2025-02-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/</loc>
+    <loc>http://localhost:1313/public/projects/</loc>
     <lastmod>2025-02-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>http://localhost:1313/public/tags/</loc>
     <lastmod>2025-02-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/combine-large-language-model-with-logical-symbolic-solver-for-multi-hop-problems-in-rag/</loc>
+    <loc>http://localhost:1313/public/projects/combine-large-language-model-with-logical-symbolic-solver-for-multi-hop-problems-in-rag/</loc>
     <lastmod>2025-02-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>http://localhost:1313/public/</loc>
     <lastmod>2025-02-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/profile/me/</loc>
+    <loc>http://localhost:1313/public/profile/me/</loc>
     <lastmod>2025-02-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/twitter-us-airline-sentiment-analysis/</loc>
+    <loc>http://localhost:1313/public/projects/twitter-us-airline-sentiment-analysis/</loc>
     <lastmod>2025-02-10T00:00:00+00:00</lastmod>
   </url>
 </urlset>
