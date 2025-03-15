@@ -12,16 +12,16 @@ title: 'Discord Archive Hub'
 
 ## Demo
 Create channel with Discord Bot
-![alt text](https://github.com/tientran0826/Discord-Archive-Hub/blob/main/images/create_channel_1.png?raw=true)
+![alt text](/images/discord-archive-hub/1.png)
 
 
-![alt text](https://github.com/tientran0826/Discord-Archive-Hub/raw/main/images/post_1.png?raw=true)
-![alt text](https://github.com/tientran0826/Discord-Archive-Hub/raw/main/images/post_2.png?raw=true)
+![alt text](/images/discord-archive-hub/2.png)
+![alt text](/images/discord-archive-hub/3.png)
 
 Zoom In-Out feature
-![alt text](https://github.com/tientran0826/Discord-Archive-Hub/raw/main/images/post_3.png?raw=true)
+![alt text](/images/discord-archive-hub/4.png)
 
 Admin Panel with CRUD features
-![alt text](https://github.com/tientran0826/Discord-Archive-Hub/raw/main/images/panel.png?raw=true)
-![alt text](https://github.com/tientran0826/Discord-Archive-Hub/raw/main/images/panel_1.png?raw=true)
+![alt text](/images/discord-archive-hub/5.png)
+![alt text](/images/discord-archive-hub/6.png)
 

@@ -11,6 +11,14 @@ pagination.pagerSize = 5
 [markup.highlight]
   noClasses = false
 
+[[module.mounts]]
+source = 'static'
+target = 'static'
+
+[[module.mounts]]
+source = 'images'
+target = 'static/images'
+
 [params]
   # dir name of your main content (default is `content/posts`).
   # the list of set content will show up on your index page (baseurl).

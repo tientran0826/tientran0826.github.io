@@ -13,4 +13,4 @@ title: 'Netflix Movies and TV Shows Recommendation System'
 • Developed a website using Streamlit, incorporating RapidAPI’s Netflix Unofficial API for efficient movie image retrieval.
 
 ## Demo
-![alt text](https://raw.githubusercontent.com/tientran0826/Netflix-movie-and-TV-show-recommendation/main/imgs/demo.png)
+![alt text](/images/netflix/image.png)

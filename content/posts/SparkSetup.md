@@ -7,7 +7,7 @@ categories: ["Tutorial"]
 title: 'Cài đặt và setup cụm Apache Spark trên Hadoop 3.3 với VirtualBox'
 ---
 
-![Demo](https://cdn.discordapp.com/attachments/1149575593403371574/1350496012153786439/image.png?ex=67d6f2ec&is=67d5a16c&hm=6f4dc3edc5d81cafa8871638558e59ecae857aebdc320b12018cc2a6afcf4a99&)
+![Demo](/images/setup-spark/1.png)
 
 ## 1. Chuẩn bị môi trường ảo hoá
 - Ảo hoá máy tạo các VMs để giả lập các cụm máy chủ
@@ -17,15 +17,15 @@ title: 'Cài đặt và setup cụm Apache Spark trên Hadoop 3.3 với VirtualB
 - Máy này mình cho làm Master, cài đủ các package sau đó Clone ra các máy phụ sau =)))
 - Thao tác trực tiếp trên Virtual Box (provip có thể sử dụng Vagrant để auto)
 - Lưu ý khi tạo máy ảo -> Setting apdapter mạng thành **Host-only** hoặc **Bridge** (ko khuyến khích Bridge vì ngồi cấu hình IP hồi rớt mạng ráng chịu)
-![Network-Apdapter](https://cdn.discordapp.com/attachments/1149575593403371574/1350497733345280071/image.png?ex=67d6f486&is=67d5a306&hm=9d5fd526ea0b806e71f99bafdc35b374efef601ed2257b92959f4d84d88de5c3&)
+![Network-Apdapter](/images/setup-spark/2.png)
 - Kiểm tra IP thông với máy host
 
     ```bash
     ip -4 addr show | grep inet
     ```
-![your-ip](https://cdn.discordapp.com/attachments/1149575593403371574/1350501992694419586/image.png?ex=67d6f87e&is=67d5a6fe&hm=21f09eed0e45359d45c624522c8536f84e594e0330baa8f26681d620e146b3ed&)
+![your-ip](/images/setup-spark/3.png)
 Ở đây địa chỉ được thông với máy host là *192.168.56.102* - Có cùng dãy IP với máy Host (nếu máy host thì kiểm tra trong /ipconfig) hoặc ping trực tiếp từ máy Host đến IP trên.
-![ping-vm-ip](https://cdn.discordapp.com/attachments/1149575593403371574/1350503191673831476/image.png?ex=67d6f99c&is=67d5a81c&hm=a6bad5ed0970d4060779d13a2d97fb36a545f43a1c320be7b265ec2dd76dab47&)
+![ping-vm-ip](/images/setup-spark/4.png)
 ## 1.2 Cài đặt một số package chung
 ### Java
 Lệnh cài đặt
@@ -42,7 +42,7 @@ Kiểm tra path java
 readlink -f $(which java)
 ```
 
-![java-version](https://cdn.discordapp.com/attachments/1149575593403371574/1350504961058013257/image.png?ex=67d6fb41&is=67d5a9c1&hm=f9bb71031f28c442f1648e74d04968dd2e726866371e8f568e97ab29741061b1&)
+![java-version](/images/setup-spark/5.png)
 
 Trong đó đường dẫn */usr/lib/jvm/java-11-openjdk-amd64/bin/java* là đường dẫn HOME_PATH của java -> Nhớ lưu cái này để xíu setup.
 
@@ -61,13 +61,13 @@ scala -version
 =))) Phần chính 🤡
 
 Truy cập https://spark.apache.org/downloads.html chọn version phù hợp ở đây mình chọn bản prebuild cho Hadoop 3.3 -> Spark phiên bản 3.5.5
-![Spark-download](https://cdn.discordapp.com/attachments/1149575593403371574/1350506302782308436/image.png?ex=67d6fc81&is=67d5ab01&hm=b0cefc35c6647bcdda1089736eb22b5936e2ee5bee5ab267f11542fce975f817&)
+![Spark-download](/images/setup-spark/6.png)
 
 Kéo file về bằng wget
 ```bash
 wget https://dlcdn.apache.org/spark/spark-3.5.5/spark-3.5.5-bin-hadoop3.tgz
 ```
-![wget-spark](https://cdn.discordapp.com/attachments/1149575593403371574/1350506928320680098/image.png?ex=67d6fd16&is=67d5ab96&hm=26cdbd720ec98ff75384bc379dbbdba738bb5369c7ab243fa2f8e93ea112941f&)
+![wget-spark](/images/setup-spark/7.png)
 
 
 Giải nén tệp .tgz với *spark-3.5.5-bin-hadoop3.tgz* là tập vừa kéo
@@ -97,13 +97,13 @@ Kiểm tra spark đã được thêm vào môi trường
 which spark-shell
 ```
 ![spark-checker](
-https://cdn.discordapp.com/attachments/1149575593403371574/1350510702326054952/image.png?ex=67d7009a&is=67d5af1a&hm=a8ed66d84b7b2e395487e38d011cf03408f1fba82b08f739e4591fe0468ca365&)
+/images/setup-spark/8.png)
 
 Vậy ta đã setup một số thư viện cần thiết cho một cụm
 
 ## 2. Clone VMs và thiết lập connection giữa các cụm
 
-![clone-vm](https://cdn.discordapp.com/attachments/1149575593403371574/1350512143610679329/image.png?ex=67d701f2&is=67d5b072&hm=ac0afdf1815e00ec0edc64bef698522788f5c463bc319c07431a15c04f21593d&)
+![clone-vm](/images/setup-spark/9.png)
 
 Clone VM gốc đã được tạo ở trên thành các worker, số lượng bao nhiêu thì tuỳ theo options người dùng. Ở đây mình clone thêm 2 bản đặt tên là Slave1 và Slave2 và cụm được setup ban đầu sẽ là Master.
 
@@ -119,12 +119,12 @@ sudo nano /hostname
 ```bash
 sudo hostnamectl set-hostname pd-master #Tuong tu voi slave-1, slave-2
 ```
-![change-hostname](https://cdn.discordapp.com/attachments/1149575593403371574/1350513872628613172/image.png?ex=67d7038e&is=67d5b20e&hm=7f30cce087060839d065920e6a6dba657846aa96fa42973c378257731569f6bc&)
+![change-hostname](/images/setup-spark/10.png)
 Reboot để thấy hostname thay đổi
 ```bash
 sudo reboot
 ```
-![hostname](https://cdn.discordapp.com/attachments/1149575593403371574/1350514218356441169/image.png?ex=67d703e0&is=67d5b260&hm=83aa8fc2f1970ad206c0b2035ba47cd60c95984b6dfe4a225aef2c9514d1c24c&)
+![hostname](/images/setup-spark/11.png)
 Với pd-master là hostname mới, ở đây mình đổi từ trước nên các các lệnh ở hướng dẫn trên đều mặc định là pd-master 
 
 ### 2.2 Add hosts cho master và slaves
@@ -141,10 +141,10 @@ Thêm vào file hosts từng VMs để chúng biết địa chỉ phân giải k
 ```bash
 sudo nano /etc/hosts
 ```
-![input-hosts](https://cdn.discordapp.com/attachments/1149575593403371574/1350515672857448448/image.png?ex=67d7053b&is=67d5b3bb&hm=b3109f014695bb8c638fdf04efcbb53f72685e806d8b07d19b019a35c9524db3&)
+![input-hosts](/images/setup-spark/12.png)
 
 Save và kiểm tra hosts được thêm bằng cách ping từ một VM bất kỳ đến các VMs còn lại
-![ping-hosts](https://cdn.discordapp.com/attachments/1149575593403371574/1350516144330641408/image.png?ex=67d705ac&is=67d5b42c&hm=03717ec8f41658950548c2a150dcb2c1cac7636090721230e29e7f500ce8dcd3&)
+![ping-hosts](/images/setup-spark/13.png)
 
 ## 3. Setup máy Master
 ### 3.1 SSH đến Slaves
@@ -158,7 +158,7 @@ Generate key pairs
 ```bash
 ssh-keygen -t rsa -P ""
 ```
-![keygen-generator](https://miro.medium.com/v2/resize:fit:750/format:webp/1*htA6Tx0mz0ZZEf4k0oKcMg.png)
+![keygen-generator](/images/setup-spark/14.png)
 
 Đẩy key vừa tạo vào authorized_keys
 ```bash
@@ -219,7 +219,7 @@ Trên máy Master
 cd /usr/local/spark
 ./sbin/start-all.sh
 ```
-![spark-start](https://cdn.discordapp.com/attachments/1149575593403371574/1350521088278401205/image.png?ex=67d70a46&is=67d5b8c6&hm=9e4aa1e69f63c93f6a5226807ee5c0164a16f5b37a8bc77fc81ee551deb09fad&)
+![spark-start](/images/setup-spark/15.png)
 
 Lệnh stop
 ```bash
@@ -234,7 +234,7 @@ Kiểm tra thông qua Spark UI, từ máy host hoặc trên các VMs truy cập
 http://<MASTER-IP>:8080/
 ```
 
-![Spark-UI](https://cdn.discordapp.com/attachments/1149575593403371574/1350521799984677045/image.png?ex=67d70af0&is=67d5b970&hm=7de39c71b31393fb3606bf7334c7b4619c26d51d4be42c676e750b34e49d3085&)
+![Spark-UI](/images/setup-spark/16.png)
 
 ### 4.2 Check qua code
 - Lười cài JAVA trên máy host quá nên mình test code trên máy Master luôn.
@@ -260,4 +260,4 @@ df.show()
 input("Inter to exit") 
 ```
 Kết quả:
-![Demo](https://cdn.discordapp.com/attachments/1149575593403371574/1350496012153786439/image.png?ex=67d6f2ec&is=67d5a16c&hm=6f4dc3edc5d81cafa8871638558e59ecae857aebdc320b12018cc2a6afcf4a99&)
+![Demo](/images/setup-spark/1.png)

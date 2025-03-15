@@ -200,7 +200,7 @@ Thao tác trực tiếp trên Virtual Box (provip có thể sử dụng Vagrant 
   
 
   <div class="post-content"><div>
-        <p><img src="https://cdn.discordapp.com/attachments/1149575593403371574/1350496012153786439/image.png?ex=67d6f2ec&amp;is=67d5a16c&amp;hm=6f4dc3edc5d81cafa8871638558e59ecae857aebdc320b12018cc2a6afcf4a99&amp;" alt="Demo"></p>
+        <p><img src="/images/setup-spark/1.png" alt="Demo"></p>
 <h2 id="1-chuẩn-bị-môi-trường-ảo-hoá">1. Chuẩn bị môi trường ảo hoá<a href="#1-chuẩn-bị-môi-trường-ảo-hoá" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <ul>
 <li>Ảo hoá máy tạo các VMs để giả lập các cụm máy chủ</li>
@@ -217,16 +217,16 @@ Thao tác trực tiếp trên Virtual Box (provip có thể sử dụng Vagrant 
 </li>
 <li>
 <p>Lưu ý khi tạo máy ảo -&gt; Setting apdapter mạng thành <strong>Host-only</strong> hoặc <strong>Bridge</strong> (ko khuyến khích Bridge vì ngồi cấu hình IP hồi rớt mạng ráng chịu)
-<img src="https://cdn.discordapp.com/attachments/1149575593403371574/1350497733345280071/image.png?ex=67d6f486&amp;is=67d5a306&amp;hm=9d5fd526ea0b806e71f99bafdc35b374efef601ed2257b92959f4d84d88de5c3&amp;" alt="Network-Apdapter"></p>
+<img src="/images/setup-spark/2.png" alt="Network-Apdapter"></p>
 </li>
 <li>
 <p>Kiểm tra IP thông với máy host</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ip -4 addr show <span class="p">|</span> grep inet
 </span></span></code></pre></div></li>
 </ul>
-<p><img src="https://cdn.discordapp.com/attachments/1149575593403371574/1350501992694419586/image.png?ex=67d6f87e&amp;is=67d5a6fe&amp;hm=21f09eed0e45359d45c624522c8536f84e594e0330baa8f26681d620e146b3ed&amp;" alt="your-ip">
+<p><img src="/images/setup-spark/3.png" alt="your-ip">
 Ở đây địa chỉ được thông với máy host là <em>192.168.56.102</em> - Có cùng dãy IP với máy Host (nếu máy host thì kiểm tra trong /ipconfig) hoặc ping trực tiếp từ máy Host đến IP trên.
-<img src="https://cdn.discordapp.com/attachments/1149575593403371574/1350503191673831476/image.png?ex=67d6f99c&amp;is=67d5a81c&amp;hm=a6bad5ed0970d4060779d13a2d97fb36a545f43a1c320be7b265ec2dd76dab47&amp;" alt="ping-vm-ip"></p>
+<img src="/images/setup-spark/4.png" alt="ping-vm-ip"></p>
 <h2 id="12-cài-đặt-một-số-package-chung">1.2 Cài đặt một số package chung<a href="#12-cài-đặt-một-số-package-chung" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <h3 id="java">Java<a href="#java" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>Lệnh cài đặt</p>
@@ -236,7 +236,7 @@ Thao tác trực tiếp trên Virtual Box (provip có thể sử dụng Vagrant 
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">java -version
 </span></span></code></pre></div><p>Kiểm tra path java</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">readlink -f <span class="k">$(</span>which java<span class="k">)</span>
-</span></span></code></pre></div><p><img src="https://cdn.discordapp.com/attachments/1149575593403371574/1350504961058013257/image.png?ex=67d6fb41&amp;is=67d5a9c1&amp;hm=f9bb71031f28c442f1648e74d04968dd2e726866371e8f568e97ab29741061b1&amp;" alt="java-version"></p>
+</span></span></code></pre></div><p><img src="/images/setup-spark/5.png" alt="java-version"></p>
 <p>Trong đó đường dẫn <em>/usr/lib/jvm/java-11-openjdk-amd64/bin/java</em> là đường dẫn HOME_PATH của java -&gt; Nhớ lưu cái này để xíu setup.</p>
 <h3 id="scala">Scala<a href="#scala" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>Cài đặt scala</p>
@@ -246,10 +246,10 @@ Thao tác trực tiếp trên Virtual Box (provip có thể sử dụng Vagrant 
 </span></span></code></pre></div><h3 id="apache-spark">Apache Spark<a href="#apache-spark" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>=))) Phần chính 🤡</p>
 <p>Truy cập <a href="https://spark.apache.org/downloads.html">https://spark.apache.org/downloads.html</a> chọn version phù hợp ở đây mình chọn bản prebuild cho Hadoop 3.3 -&gt; Spark phiên bản 3.5.5
-<img src="https://cdn.discordapp.com/attachments/1149575593403371574/1350506302782308436/image.png?ex=67d6fc81&amp;is=67d5ab01&amp;hm=b0cefc35c6647bcdda1089736eb22b5936e2ee5bee5ab267f11542fce975f817&amp;" alt="Spark-download"></p>
+<img src="/images/setup-spark/6.png" alt="Spark-download"></p>
 <p>Kéo file về bằng wget</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wget https://dlcdn.apache.org/spark/spark-3.5.5/spark-3.5.5-bin-hadoop3.tgz
-</span></span></code></pre></div><p><img src="https://cdn.discordapp.com/attachments/1149575593403371574/1350506928320680098/image.png?ex=67d6fd16&amp;is=67d5ab96&amp;hm=26cdbd720ec98ff75384bc379dbbdba738bb5369c7ab243fa2f8e93ea112941f&amp;" alt="wget-spark"></p>
+</span></span></code></pre></div><p><img src="/images/setup-spark/7.png" alt="wget-spark"></p>
 <p>Giải nén tệp .tgz với <em>spark-3.5.5-bin-hadoop3.tgz</em> là tập vừa kéo</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">tar xvf spark-3.5.5-bin-hadoop3.tgz
 </span></span></code></pre></div><p>Move folder đã giải nén vào path <em>/usr/local/spark</em></p>
@@ -262,10 +262,10 @@ Thao tác trực tiếp trên Virtual Box (provip có thể sử dụng Vagrant 
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">source</span> ~/.bashrc
 </span></span></code></pre></div><p>Kiểm tra spark đã được thêm vào môi trường</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">which spark-shell
-</span></span></code></pre></div><p><img src="https://cdn.discordapp.com/attachments/1149575593403371574/1350510702326054952/image.png?ex=67d7009a&amp;is=67d5af1a&amp;hm=a8ed66d84b7b2e395487e38d011cf03408f1fba82b08f739e4591fe0468ca365&amp;" alt="spark-checker"></p>
+</span></span></code></pre></div><p><img src="/images/setup-spark/8.png" alt="spark-checker"></p>
 <p>Vậy ta đã setup một số thư viện cần thiết cho một cụm</p>
 <h2 id="2-clone-vms-và-thiết-lập-connection-giữa-các-cụm">2. Clone VMs và thiết lập connection giữa các cụm<a href="#2-clone-vms-và-thiết-lập-connection-giữa-các-cụm" class="hanchor" ariaLabel="Anchor">#</a> </h2>
-<p><img src="https://cdn.discordapp.com/attachments/1149575593403371574/1350512143610679329/image.png?ex=67d701f2&amp;is=67d5b072&amp;hm=ac0afdf1815e00ec0edc64bef698522788f5c463bc319c07431a15c04f21593d&amp;" alt="clone-vm"></p>
+<p><img src="/images/setup-spark/9.png" alt="clone-vm"></p>
 <p>Clone VM gốc đã được tạo ở trên thành các worker, số lượng bao nhiêu thì tuỳ theo options người dùng. Ở đây mình clone thêm 2 bản đặt tên là Slave1 và Slave2 và cụm được setup ban đầu sẽ là Master.</p>
 <h3 id="21-set-lại-hostname-tuỳ-chọn">2.1 Set lại hostname (tuỳ chọn)<a href="#21-set-lại-hostname-tuỳ-chọn" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <ul>
@@ -276,10 +276,10 @@ Thao tác trực tiếp trên Virtual Box (provip có thể sử dụng Vagrant 
 <p>Cú pháp chuyển hostname</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /hostname
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo hostnamectl set-hostname pd-master <span class="c1">#Tuong tu voi slave-1, slave-2</span>
-</span></span></code></pre></div><p><img src="https://cdn.discordapp.com/attachments/1149575593403371574/1350513872628613172/image.png?ex=67d7038e&amp;is=67d5b20e&amp;hm=7f30cce087060839d065920e6a6dba657846aa96fa42973c378257731569f6bc&amp;" alt="change-hostname">
+</span></span></code></pre></div><p><img src="/images/setup-spark/10.png" alt="change-hostname">
 Reboot để thấy hostname thay đổi</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo reboot
-</span></span></code></pre></div><p><img src="https://cdn.discordapp.com/attachments/1149575593403371574/1350514218356441169/image.png?ex=67d703e0&amp;is=67d5b260&amp;hm=83aa8fc2f1970ad206c0b2035ba47cd60c95984b6dfe4a225aef2c9514d1c24c&amp;" alt="hostname">
+</span></span></code></pre></div><p><img src="/images/setup-spark/11.png" alt="hostname">
 Với pd-master là hostname mới, ở đây mình đổi từ trước nên các các lệnh ở hướng dẫn trên đều mặc định là pd-master</p>
 <h3 id="22-add-hosts-cho-master-và-slaves">2.2 Add hosts cho master và slaves<a href="#22-add-hosts-cho-master-và-slaves" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>Như cú pháp kiểm tra địa chỉ ip như phần 1 đã hướng dẫn ta lần lượt có các địa chỉ như sau:</p>
@@ -288,9 +288,9 @@ Với pd-master là hostname mới, ở đây mình đổi từ trước nên c�
 </span></span><span class="line"><span class="cl">192.168.56.104 pd-slave-2
 </span></span></code></pre></div><p>Thêm vào file hosts từng VMs để chúng biết địa chỉ phân giải khi ta gọi các máy bằng hostname</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/hosts
-</span></span></code></pre></div><p><img src="https://cdn.discordapp.com/attachments/1149575593403371574/1350515672857448448/image.png?ex=67d7053b&amp;is=67d5b3bb&amp;hm=b3109f014695bb8c638fdf04efcbb53f72685e806d8b07d19b019a35c9524db3&amp;" alt="input-hosts"></p>
+</span></span></code></pre></div><p><img src="/images/setup-spark/12.png" alt="input-hosts"></p>
 <p>Save và kiểm tra hosts được thêm bằng cách ping từ một VM bất kỳ đến các VMs còn lại
-<img src="https://cdn.discordapp.com/attachments/1149575593403371574/1350516144330641408/image.png?ex=67d705ac&amp;is=67d5b42c&amp;hm=03717ec8f41658950548c2a150dcb2c1cac7636090721230e29e7f500ce8dcd3&amp;" alt="ping-hosts"></p>
+<img src="/images/setup-spark/13.png" alt="ping-hosts"></p>
 <h2 id="3-setup-máy-master">3. Setup máy Master<a href="#3-setup-máy-master" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <h3 id="31-ssh-đến-slaves">3.1 SSH đến Slaves<a href="#31-ssh-đến-slaves" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>Config SSH cho máy master sử dụng ssh-keygen để đặp nhập thay vì password vì lý do bảo mật + nhanh và tự động hơn.</p>
@@ -298,7 +298,7 @@ Với pd-master là hostname mới, ở đây mình đổi từ trước nên c�
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt-get install openssh-server openssh-client
 </span></span></code></pre></div><p>Generate key pairs</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh-keygen -t rsa -P <span class="s2">&#34;&#34;</span>
-</span></span></code></pre></div><p><img src="https://miro.medium.com/v2/resize:fit:750/format:webp/1*htA6Tx0mz0ZZEf4k0oKcMg.png" alt="keygen-generator"></p>
+</span></span></code></pre></div><p><img src="/images/setup-spark/14.png" alt="keygen-generator"></p>
 <p>Đẩy key vừa tạo vào authorized_keys</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys
 </span></span></code></pre></div><p>Đưa ssh-keygen vừa được tạo vào key được truy cập của cả máy master và các máy slaves</p>
@@ -330,14 +330,14 @@ Với pd-master là hostname mới, ở đây mình đổi từ trước nên c�
 <p>Trên máy Master</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /usr/local/spark
 </span></span><span class="line"><span class="cl">./sbin/start-all.sh
-</span></span></code></pre></div><p><img src="https://cdn.discordapp.com/attachments/1149575593403371574/1350521088278401205/image.png?ex=67d70a46&amp;is=67d5b8c6&amp;hm=9e4aa1e69f63c93f6a5226807ee5c0164a16f5b37a8bc77fc81ee551deb09fad&amp;" alt="spark-start"></p>
+</span></span></code></pre></div><p><img src="/images/setup-spark/15.png" alt="spark-start"></p>
 <p>Lệnh stop</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./sbin/stop-all.sh
 </span></span></code></pre></div><h2 id="4-kiểm-tra-cụm-spark">4. Kiểm tra cụm Spark<a href="#4-kiểm-tra-cụm-spark" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <h3 id="41-spark-ui">4.1 Spark UI<a href="#41-spark-ui" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>Kiểm tra thông qua Spark UI, từ máy host hoặc trên các VMs truy cập</p>
 <pre tabindex="0"><code>http://&lt;MASTER-IP&gt;:8080/
-</code></pre><p><img src="https://cdn.discordapp.com/attachments/1149575593403371574/1350521799984677045/image.png?ex=67d70af0&amp;is=67d5b970&amp;hm=7de39c71b31393fb3606bf7334c7b4619c26d51d4be42c676e750b34e49d3085&amp;" alt="Spark-UI"></p>
+</code></pre><p><img src="/images/setup-spark/16.png" alt="Spark-UI"></p>
 <h3 id="42-check-qua-code">4.2 Check qua code<a href="#42-check-qua-code" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <ul>
 <li>Lười cài JAVA trên máy host quá nên mình test code trên máy Master luôn.</li>
@@ -358,7 +358,7 @@ Với pd-master là hostname mới, ở đây mình đổi từ trước nên c�
 </span></span><span class="line"><span class="cl"><span class="c1"># Them cai nay de hoi chay file py trong command khong bi end session ngay lap tuc</span>
 </span></span><span class="line"><span class="cl"><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Inter to exit&#34;</span><span class="p">)</span> 
 </span></span></code></pre></div><p>Kết quả:
-<img src="https://cdn.discordapp.com/attachments/1149575593403371574/1350496012153786439/image.png?ex=67d6f2ec&amp;is=67d5a16c&amp;hm=6f4dc3edc5d81cafa8871638558e59ecae857aebdc320b12018cc2a6afcf4a99&amp;" alt="Demo"></p>
+<img src="/images/setup-spark/1.png" alt="Demo"></p>
 
       </div></div>
 
