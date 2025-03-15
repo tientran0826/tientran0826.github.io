@@ -16,7 +16,7 @@ categories: ["Personal"]
 - **AI Engineer Intern** at **Hephaestus**: 06/2023 - 08/2023  
 - **Quantitative Researcher, Data Engineer** at **PI ASSOCIATES (Vietquant)**: 08/2023 - 04/2024  
 - **AI Engineer** at **Armour Security**: 04/2024 - 05/2024  
-- **Data Scientist** at **VNPAY**: 05/202
+- **Data Scientist** at **VNPAY**: 05/2024 - Present
 
 
 ![alt text](https://media.licdn.com/dms/image/v2/D562DAQEPwoC8r-MSlQ/profile-treasury-image-shrink_8192_8192/profile-treasury-image-shrink_8192_8192/0/1731430715573?e=1742576400&v=beta&t=Fcoly1iqzLwgLBrwxJu4NKLj-BAYVtXi_5YiAb80qlI)

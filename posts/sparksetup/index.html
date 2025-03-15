@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+    <title>Cài đặt và setup cụm Apache Spark trên Hadoop 3.3 với VirtualBox :: tientran0826</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+1. Chuẩn bị môi trường ảo hoá Ảo hoá máy tạo các VMs để giả lập các cụm máy chủ Tool ảo hoá: Oracle Virtual Box (https://www.virtualbox.org/wiki/Downloads) Ubuntu 20.04.6 LTS (https://releases.ubuntu.com/focal/) 1.1 Setup máy ảo gốc Máy này mình cho làm Master, cài đủ các package sau đó Clone ra các máy phụ sau =)))
+Thao tác trực tiếp trên Virtual Box (provip có thể sử dụng Vagrant để auto)
+" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="http://localhost:1313/posts/sparksetup/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/code.min.4f0ccc8439f99bf7f7970298556b94011aabc1fcae743b6842fc3361a2da9ea3.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/main.min.15870410d15d02abd22fb5ef00996f65a00d04b3a7435e9f83831c7c2298de88.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="http://localhost:1313/favicon.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Cài đặt và setup cụm Apache Spark trên Hadoop 3.3 với VirtualBox">
+<meta property="og:description" content="
+1. Chuẩn bị môi trường ảo hoá Ảo hoá máy tạo các VMs để giả lập các cụm máy chủ Tool ảo hoá: Oracle Virtual Box (https://www.virtualbox.org/wiki/Downloads) Ubuntu 20.04.6 LTS (https://releases.ubuntu.com/focal/) 1.1 Setup máy ảo gốc Máy này mình cho làm Master, cài đủ các package sau đó Clone ra các máy phụ sau =)))
+Thao tác trực tiếp trên Virtual Box (provip có thể sử dụng Vagrant để auto)
+" />
+<meta property="og:url" content="http://localhost:1313/posts/sparksetup/" />
+<meta property="og:site_name" content="tientran0826" />
+
+  <meta property="og:image" content="http://localhost:1313/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+  <meta property="article:section" content="Tutorial" />
+
+
+  <meta property="article:published_time" content="2025-03-15 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    tientran0826
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/posts">Posts</a></li>
+        
+      
+        
+          <li><a href="/profile">Profile</a></li>
+        
+      
+        
+          <li><a href="/projects">Projects</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/posts" >Posts</a></li>
+        
+      
+        
+          <li><a href="/profile" >Profile</a></li>
+        
+      
+        
+          <li><a href="/projects" >Projects</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="http://localhost:1313/posts/sparksetup/">Cài đặt và setup cụm Apache Spark trên Hadoop 3.3 với VirtualBox</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2025-03-15&nbsp;[Updated:  2025-03-15]</time><span class="post-reading-time">5 min read (856 words)</span></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="http://localhost:1313/tags/spark/">spark</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/hadoop/">hadoop</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p><img src="https://cdn.discordapp.com/attachments/1149575593403371574/1350496012153786439/image.png?ex=67d6f2ec&amp;is=67d5a16c&amp;hm=6f4dc3edc5d81cafa8871638558e59ecae857aebdc320b12018cc2a6afcf4a99&amp;" alt="Demo"></p>
+<h2 id="1-chuẩn-bị-môi-trường-ảo-hoá">1. Chuẩn bị môi trường ảo hoá<a href="#1-chuẩn-bị-môi-trường-ảo-hoá" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<ul>
+<li>Ảo hoá máy tạo các VMs để giả lập các cụm máy chủ</li>
+<li>Tool ảo hoá: Oracle Virtual Box  (<a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a>)</li>
+<li>Ubuntu 20.04.6 LTS (<a href="https://releases.ubuntu.com/focal/">https://releases.ubuntu.com/focal/</a>)</li>
+</ul>
+<h3 id="11-setup-máy-ảo-gốc">1.1 Setup máy ảo gốc<a href="#11-setup-máy-ảo-gốc" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<ul>
+<li>
+<p>Máy này mình cho làm Master, cài đủ các package sau đó Clone ra các máy phụ sau =)))</p>
+</li>
+<li>
+<p>Thao tác trực tiếp trên Virtual Box (provip có thể sử dụng Vagrant để auto)</p>
+</li>
+<li>
+<p>Lưu ý khi tạo máy ảo -&gt; Setting apdapter mạng thành <strong>Host-only</strong> hoặc <strong>Bridge</strong> (ko khuyến khích Bridge vì ngồi cấu hình IP hồi rớt mạng ráng chịu)
+<img src="https://cdn.discordapp.com/attachments/1149575593403371574/1350497733345280071/image.png?ex=67d6f486&amp;is=67d5a306&amp;hm=9d5fd526ea0b806e71f99bafdc35b374efef601ed2257b92959f4d84d88de5c3&amp;" alt="Network-Apdapter"></p>
+</li>
+<li>
+<p>Kiểm tra IP thông với máy host</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ip -4 addr show <span class="p">|</span> grep inet
+</span></span></code></pre></div></li>
+</ul>
+<p><img src="https://cdn.discordapp.com/attachments/1149575593403371574/1350501992694419586/image.png?ex=67d6f87e&amp;is=67d5a6fe&amp;hm=21f09eed0e45359d45c624522c8536f84e594e0330baa8f26681d620e146b3ed&amp;" alt="your-ip">
+Ở đây địa chỉ được thông với máy host là <em>192.168.56.102</em> - Có cùng dãy IP với máy Host (nếu máy host thì kiểm tra trong /ipconfig) hoặc ping trực tiếp từ máy Host đến IP trên.
+<img src="https://cdn.discordapp.com/attachments/1149575593403371574/1350503191673831476/image.png?ex=67d6f99c&amp;is=67d5a81c&amp;hm=a6bad5ed0970d4060779d13a2d97fb36a545f43a1c320be7b265ec2dd76dab47&amp;" alt="ping-vm-ip"></p>
+<h2 id="12-cài-đặt-một-số-package-chung">1.2 Cài đặt một số package chung<a href="#12-cài-đặt-một-số-package-chung" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<h3 id="java">Java<a href="#java" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Lệnh cài đặt</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt-get update
+</span></span><span class="line"><span class="cl">sudo apt-get install openjdk-11-jdk
+</span></span></code></pre></div><p>Kiểm tra cài đặt</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">java -version
+</span></span></code></pre></div><p>Kiểm tra path java</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">readlink -f <span class="k">$(</span>which java<span class="k">)</span>
+</span></span></code></pre></div><p><img src="https://cdn.discordapp.com/attachments/1149575593403371574/1350504961058013257/image.png?ex=67d6fb41&amp;is=67d5a9c1&amp;hm=f9bb71031f28c442f1648e74d04968dd2e726866371e8f568e97ab29741061b1&amp;" alt="java-version"></p>
+<p>Trong đó đường dẫn <em>/usr/lib/jvm/java-11-openjdk-amd64/bin/java</em> là đường dẫn HOME_PATH của java -&gt; Nhớ lưu cái này để xíu setup.</p>
+<h3 id="scala">Scala<a href="#scala" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Cài đặt scala</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt-get install scala
+</span></span></code></pre></div><p>Check version scala</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">scala -version
+</span></span></code></pre></div><h3 id="apache-spark">Apache Spark<a href="#apache-spark" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>=))) Phần chính 🤡</p>
+<p>Truy cập <a href="https://spark.apache.org/downloads.html">https://spark.apache.org/downloads.html</a> chọn version phù hợp ở đây mình chọn bản prebuild cho Hadoop 3.3 -&gt; Spark phiên bản 3.5.5
+<img src="https://cdn.discordapp.com/attachments/1149575593403371574/1350506302782308436/image.png?ex=67d6fc81&amp;is=67d5ab01&amp;hm=b0cefc35c6647bcdda1089736eb22b5936e2ee5bee5ab267f11542fce975f817&amp;" alt="Spark-download"></p>
+<p>Kéo file về bằng wget</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wget https://dlcdn.apache.org/spark/spark-3.5.5/spark-3.5.5-bin-hadoop3.tgz
+</span></span></code></pre></div><p><img src="https://cdn.discordapp.com/attachments/1149575593403371574/1350506928320680098/image.png?ex=67d6fd16&amp;is=67d5ab96&amp;hm=26cdbd720ec98ff75384bc379dbbdba738bb5369c7ab243fa2f8e93ea112941f&amp;" alt="wget-spark"></p>
+<p>Giải nén tệp .tgz với <em>spark-3.5.5-bin-hadoop3.tgz</em> là tập vừa kéo</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">tar xvf spark-3.5.5-bin-hadoop3.tgz
+</span></span></code></pre></div><p>Move folder đã giải nén vào path <em>/usr/local/spark</em></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo mv spark-3.5.5-bin-hadoop3 /usr/local/spark
+</span></span></code></pre></div><p>Thêm spark path vào môi trường hệ thống (tương tự set enviroment variables trong Window)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano ~/.bashrc
+</span></span></code></pre></div><p>Với file <em>.bashrc</em> chứa các biến môi trường của hệ thông, thêm vào file</p>
+<pre tabindex="0"><code>export PATH=$PATH:/usr/local/spark/bin
+</code></pre><p>Apply biến</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">source</span> ~/.bashrc
+</span></span></code></pre></div><p>Kiểm tra spark đã được thêm vào môi trường</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">which spark-shell
+</span></span></code></pre></div><p><img src="https://cdn.discordapp.com/attachments/1149575593403371574/1350510702326054952/image.png?ex=67d7009a&amp;is=67d5af1a&amp;hm=a8ed66d84b7b2e395487e38d011cf03408f1fba82b08f739e4591fe0468ca365&amp;" alt="spark-checker"></p>
+<p>Vậy ta đã setup một số thư viện cần thiết cho một cụm</p>
+<h2 id="2-clone-vms-và-thiết-lập-connection-giữa-các-cụm">2. Clone VMs và thiết lập connection giữa các cụm<a href="#2-clone-vms-và-thiết-lập-connection-giữa-các-cụm" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p><img src="https://cdn.discordapp.com/attachments/1149575593403371574/1350512143610679329/image.png?ex=67d701f2&amp;is=67d5b072&amp;hm=ac0afdf1815e00ec0edc64bef698522788f5c463bc319c07431a15c04f21593d&amp;" alt="clone-vm"></p>
+<p>Clone VM gốc đã được tạo ở trên thành các worker, số lượng bao nhiêu thì tuỳ theo options người dùng. Ở đây mình clone thêm 2 bản đặt tên là Slave1 và Slave2 và cụm được setup ban đầu sẽ là Master.</p>
+<h3 id="21-set-lại-hostname-tuỳ-chọn">2.1 Set lại hostname (tuỳ chọn)<a href="#21-set-lại-hostname-tuỳ-chọn" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<ul>
+<li>Ở đây mình set lại hostname để tiện quản lý =)))</li>
+<li>Với cụm master được hostname là pd-master</li>
+<li>Các cụm worker được hostname là pd-slave-1 và pd-slave-2</li>
+</ul>
+<p>Cú pháp chuyển hostname</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /hostname
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo hostnamectl set-hostname pd-master <span class="c1">#Tuong tu voi slave-1, slave-2</span>
+</span></span></code></pre></div><p><img src="https://cdn.discordapp.com/attachments/1149575593403371574/1350513872628613172/image.png?ex=67d7038e&amp;is=67d5b20e&amp;hm=7f30cce087060839d065920e6a6dba657846aa96fa42973c378257731569f6bc&amp;" alt="change-hostname">
+Reboot để thấy hostname thay đổi</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo reboot
+</span></span></code></pre></div><p><img src="https://cdn.discordapp.com/attachments/1149575593403371574/1350514218356441169/image.png?ex=67d703e0&amp;is=67d5b260&amp;hm=83aa8fc2f1970ad206c0b2035ba47cd60c95984b6dfe4a225aef2c9514d1c24c&amp;" alt="hostname">
+Với pd-master là hostname mới, ở đây mình đổi từ trước nên các các lệnh ở hướng dẫn trên đều mặc định là pd-master</p>
+<h3 id="22-add-hosts-cho-master-và-slaves">2.2 Add hosts cho master và slaves<a href="#22-add-hosts-cho-master-và-slaves" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Như cú pháp kiểm tra địa chỉ ip như phần 1 đã hướng dẫn ta lần lượt có các địa chỉ như sau:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">192.168.56.102 pd-master
+</span></span><span class="line"><span class="cl">192.168.56.103 pd-slave-1
+</span></span><span class="line"><span class="cl">192.168.56.104 pd-slave-2
+</span></span></code></pre></div><p>Thêm vào file hosts từng VMs để chúng biết địa chỉ phân giải khi ta gọi các máy bằng hostname</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/hosts
+</span></span></code></pre></div><p><img src="https://cdn.discordapp.com/attachments/1149575593403371574/1350515672857448448/image.png?ex=67d7053b&amp;is=67d5b3bb&amp;hm=b3109f014695bb8c638fdf04efcbb53f72685e806d8b07d19b019a35c9524db3&amp;" alt="input-hosts"></p>
+<p>Save và kiểm tra hosts được thêm bằng cách ping từ một VM bất kỳ đến các VMs còn lại
+<img src="https://cdn.discordapp.com/attachments/1149575593403371574/1350516144330641408/image.png?ex=67d705ac&amp;is=67d5b42c&amp;hm=03717ec8f41658950548c2a150dcb2c1cac7636090721230e29e7f500ce8dcd3&amp;" alt="ping-hosts"></p>
+<h2 id="3-setup-máy-master">3. Setup máy Master<a href="#3-setup-máy-master" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<h3 id="31-ssh-đến-slaves">3.1 SSH đến Slaves<a href="#31-ssh-đến-slaves" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Config SSH cho máy master sử dụng ssh-keygen để đặp nhập thay vì password vì lý do bảo mật + nhanh và tự động hơn.</p>
+<p>Cài đặt <em>Open SSH Server-Client</em></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt-get install openssh-server openssh-client
+</span></span></code></pre></div><p>Generate key pairs</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh-keygen -t rsa -P <span class="s2">&#34;&#34;</span>
+</span></span></code></pre></div><p><img src="https://miro.medium.com/v2/resize:fit:750/format:webp/1*htA6Tx0mz0ZZEf4k0oKcMg.png" alt="keygen-generator"></p>
+<p>Đẩy key vừa tạo vào authorized_keys</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys
+</span></span></code></pre></div><p>Đưa ssh-keygen vừa được tạo vào key được truy cập của cả máy master và các máy slaves</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh-copy-id user@pd-master <span class="c1">#Thay user bang account name</span>
+</span></span><span class="line"><span class="cl">ssh-copy-id user@pd-slave-1
+</span></span><span class="line"><span class="cl">ssh-copy-id user@pd-slave-2
+</span></span></code></pre></div><p>Kiểm tra ssh từ máy master đến các máy slaves</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh pd-slave-1 <span class="c1"># Test ssh den slave 1</span>
+</span></span><span class="line"><span class="cl">ssh pd-slave-2 <span class="c1"># Test ssh den slave 2</span>
+</span></span></code></pre></div><h3 id="32-spark-config-cho-master">3.2 Spark config cho Master<a href="#32-spark-config-cho-master" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Chuyển đến thư mục config của Spark</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /usr/local/spark/conf
+</span></span></code></pre></div><p>Copy template config của spark vào cùng thư mục</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cp spark-env.sh.template spark-env.sh
+</span></span></code></pre></div><p>Giờ là lúc config =)))</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano spark-env.sh
+</span></span></code></pre></div><p>Thêm đoạn này vào (thay địa chỉ và đường dẫn)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">SPARK_MASTER_HOST</span><span class="o">=</span><span class="s1">&#39;&lt;MASTER-IP&gt;&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">JAVA_HOME</span><span class="o">=</span>&lt;Path_of_JAVA_installation&gt;
+</span></span></code></pre></div><p>Với MASTER_IP với máy master như ví dụ là <em>192.168.56.102</em> và JAVA_HOME là <em>/usr/lib/jvm/java-11-openjdk-amd64/bin/java</em>.</p>
+<h3 id="33-thêm-workers">3.3 Thêm workers<a href="#33-thêm-workers" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Trong cùng thư mục <em>/usr/local/spark/conf</em></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano slaves
+</span></span></code></pre></div><p>Thêm nội dung như sau</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pd-master
+</span></span><span class="line"><span class="cl">pd-slave-1
+</span></span><span class="line"><span class="cl">pd-slave-2
+</span></span></code></pre></div><h3 id="34-khởi-động-spark-cluster">3.4 Khởi động Spark Cluster<a href="#34-khởi-động-spark-cluster" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Trên máy Master</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /usr/local/spark
+</span></span><span class="line"><span class="cl">./sbin/start-all.sh
+</span></span></code></pre></div><p><img src="https://cdn.discordapp.com/attachments/1149575593403371574/1350521088278401205/image.png?ex=67d70a46&amp;is=67d5b8c6&amp;hm=9e4aa1e69f63c93f6a5226807ee5c0164a16f5b37a8bc77fc81ee551deb09fad&amp;" alt="spark-start"></p>
+<p>Lệnh stop</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./sbin/stop-all.sh
+</span></span></code></pre></div><h2 id="4-kiểm-tra-cụm-spark">4. Kiểm tra cụm Spark<a href="#4-kiểm-tra-cụm-spark" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<h3 id="41-spark-ui">4.1 Spark UI<a href="#41-spark-ui" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Kiểm tra thông qua Spark UI, từ máy host hoặc trên các VMs truy cập</p>
+<pre tabindex="0"><code>http://&lt;MASTER-IP&gt;:8080/
+</code></pre><p><img src="https://cdn.discordapp.com/attachments/1149575593403371574/1350521799984677045/image.png?ex=67d70af0&amp;is=67d5b970&amp;hm=7de39c71b31393fb3606bf7334c7b4619c26d51d4be42c676e750b34e49d3085&amp;" alt="Spark-UI"></p>
+<h3 id="42-check-qua-code">4.2 Check qua code<a href="#42-check-qua-code" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<ul>
+<li>Lười cài JAVA trên máy host quá nên mình test code trên máy Master luôn.</li>
+<li>Note: Nhớ cài pyspark =)))</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nano test_spark.py
+</span></span></code></pre></div><p>Code demo:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SparkSession</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">spark</span> <span class="o">=</span> <span class="n">SparkSession</span><span class="o">.</span><span class="n">builder</span>\
+</span></span><span class="line"><span class="cl">            <span class="o">.</span><span class="n">appName</span><span class="p">(</span><span class="s2">&#34;Check Cluster Spark)</span><span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span><span class="s2">            .master(&#34;</span><span class="n">spark</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">MASTER</span><span class="o">-</span><span class="n">IP</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">7077</span><span class="p">)</span>\
+</span></span><span class="line"><span class="cl">            <span class="o">.</span><span class="n">getOrCreate</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&#34;Alice&#34;</span><span class="p">,</span><span class="mi">25</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="p">[</span><span class="s2">&#34;Name&#34;</span><span class="p">,</span> <span class="s2">&#34;Age&#34;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Them cai nay de hoi chay file py trong command khong bi end session ngay lap tuc</span>
+</span></span><span class="line"><span class="cl"><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Inter to exit&#34;</span><span class="p">)</span> 
+</span></span></code></pre></div><p>Kết quả:
+<img src="https://cdn.discordapp.com/attachments/1149575593403371574/1350496012153786439/image.png?ex=67d6f2ec&amp;is=67d5a16c&amp;hm=6f4dc3edc5d81cafa8871638558e59ecae857aebdc320b12018cc2a6afcf4a99&amp;" alt="Demo"></p>
+
+      </div></div>
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2025 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
