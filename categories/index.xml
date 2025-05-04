@@ -6,8 +6,29 @@
     <description>Recent content in Categories on tientran0826</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 15 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 03 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://tientran0826.io.vn/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Concept-Drift</title>
+      <link>https://tientran0826.io.vn/categories/concept-drift/</link>
+      <pubDate>Sat, 03 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://tientran0826.io.vn/categories/concept-drift/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data-Drift</title>
+      <link>https://tientran0826.io.vn/categories/data-drift/</link>
+      <pubDate>Sat, 03 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://tientran0826.io.vn/categories/data-drift/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Model-Drift</title>
+      <link>https://tientran0826.io.vn/categories/model-drift/</link>
+      <pubDate>Sat, 03 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://tientran0826.io.vn/categories/model-drift/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Tutorial</title>
       <link>https://tientran0826.io.vn/categories/tutorial/</link>

@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on tientran0826</title>
-    <link>https://tientran0826.io.vn/posts/</link>
-    <description>Recent content in Posts on tientran0826</description>
+    <title>Concept-Drift on tientran0826</title>
+    <link>https://tientran0826.io.vn/categories/concept-drift/</link>
+    <description>Recent content in Concept-Drift on tientran0826</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sat, 03 May 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://tientran0826.io.vn/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://tientran0826.io.vn/categories/concept-drift/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Từ dữ liệu đến dự đoán: Khi Drift làm sai lệch mô hình</title>
       <link>https://tientran0826.io.vn/posts/allthingsaboutdrift/</link>
       <pubDate>Sat, 03 May 2025 00:00:00 +0000</pubDate>
       <guid>https://tientran0826.io.vn/posts/allthingsaboutdrift/</guid>
       <description>&lt;h2 id=&#34;1what-is-drift-&#34;&gt;1.What is Drift ?&lt;/h2&gt;&#xA;&lt;p&gt;Mô hình Machine Learning được huấn luyện trên dữ liệu lịch sử (historical data). Tuy nhiên, khi áp dụng vào dữ liệu thực tế, có thể xảy ra hiện tượng dữ liệu thực tế không còn phù hợp với dữ liệu huấn luyện do bị lỗi thời, dẫn đến độ chính xác của mô hình giảm dần theo thời gian.&lt;/p&gt;&#xA;&lt;p&gt;Drift là sự thay đổi theo thời gian trong các đặc tính thống kê của dữ liệu đã được dùng để huấn luyện mô hình học máy. Khi dữ liệu thực tế mà mô hình gặp sau này khác biệt so với dữ liệu huấn luyện ban đầu, mô hình có thể hoạt động kém hiệu quả, giảm độ chính xác, hoặc cho ra kết quả không như mong đợi.&#xA;&lt;em&gt;Ví dụ: bạn huấn luyện một mô hình dự đoán hành vi khách hàng dựa trên dữ liệu năm 2022. Tuy nhiên, đến năm 2024, hành vi khách hàng thay đổi do thị trường, xu hướng hoặc yếu tố kinh tế. Lúc này, mô hình có thể không còn phù hợp nữa — đó chính là hiện tượng drift.&lt;/em&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Cài đặt và setup cụm Apache Spark trên Hadoop 3.3 với VirtualBox</title>
-      <link>https://tientran0826.io.vn/posts/sparksetup/</link>
-      <pubDate>Sat, 15 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://tientran0826.io.vn/posts/sparksetup/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://tientran0826.io.vn/images/setup-spark/1.png&#34; alt=&#34;Demo&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-chuẩn-bị-môi-trường-ảo-hoá&#34;&gt;1. Chuẩn bị môi trường ảo hoá&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Ảo hoá máy tạo các VMs để giả lập các cụm máy chủ&lt;/li&gt;&#xA;&lt;li&gt;Tool ảo hoá: Oracle Virtual Box  (&lt;a href=&#34;https://www.virtualbox.org/wiki/Downloads&#34;&gt;https://www.virtualbox.org/wiki/Downloads&lt;/a&gt;)&lt;/li&gt;&#xA;&lt;li&gt;Ubuntu 20.04.6 LTS (&lt;a href=&#34;https://releases.ubuntu.com/focal/&#34;&gt;https://releases.ubuntu.com/focal/&lt;/a&gt;)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;11-setup-máy-ảo-gốc&#34;&gt;1.1 Setup máy ảo gốc&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Máy này mình cho làm Master, cài đủ các package sau đó Clone ra các máy phụ sau =)))&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Thao tác trực tiếp trên Virtual Box (provip có thể sử dụng Vagrant để auto)&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
